@@ -1,0 +1,46 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- Latest compiled and minified CSS -->
+
+
+
+
+
+
+<link rel="stylesheet"  href='{% static "css/nav.css" %}'>
+	<title>list</title>
+</head>
+{% include 'nav.html'%}
+<body>
+
+
+{%for product in products%}
+
+
+
+
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      
+      <div class="caption">
+        <h3><a href='{{ product.get_absolute_url }}'>{{product.name}}</a> <br/></h3>
+        <p>{{product.des}} <br/>
+		</p>
+      </div>
+    </div>
+  </div>
+{%endfor%}
+</div>
+
+</body>
+<footer>
+<!-- Latest compiled and minified JavaScript -->
+{% include 'footer.html'%}
+</footer>
+</body>
+</html>
